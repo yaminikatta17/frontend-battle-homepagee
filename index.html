@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Section</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #003366, #001f3f);
+      color: white;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.light {
+      background: linear-gradient(to bottom, #f2f2f2, #d9d9d9);
+      color: #111;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    body.light .theme-toggle {
+      color: #111;
+      border-color: #111;
+    }
+
+    .hero-section {
+      position: relative;
+      padding: 100px 20px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .ratings {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      background: #c7ebf9;
+      color: #001f3f;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    .secondary-link {
+      font-size: 0.9rem;
+      text-decoration: underline;
+      cursor: pointer;
+      opacity: 0.85;
+    }
+
+    .chart {
+      position: absolute;
+      opacity: 0.15;
+      filter: blur(8px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .chart1 { top: 20%; left: 5%; width: 120px; }
+    .chart2 { top: 30%; right: 10%; width: 160px; }
+    .chart3 { bottom: 10%; left: 50%; transform: translateX(-50%); width: 200px; }
+
+    .interactive-word {
+      position: relative;
+      display: inline-block;
+    }
+
+    .trigger-hover {
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .floating-ui {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      z-index: 3;
+    }
+
+    .floating-ui img {
+      width: 160px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      filter: blur(4px);
+      opacity: 0.7;
+    }
+
+    .interactive-word:hover .floating-ui {
+      opacity: 1;
+    }
+
+    .popup-1 { top: -60px; left: -180px; }
+    .popup-2 { top: -100px; right: -180px; }
+    .popup-3 { bottom: -100px; left: 20%; }
+    .popup-4 { top: -60px; left: -150px; }
+    .popup-5 { top: -100px; right: -150px; }
+    .popup-6 { bottom: -100px; left: 30%; }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.4;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .cta-btn {
+        width: 100%;
+        font-size: 1rem;
+      }
+      .chart, .floating-ui {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  <section class="hero-section">
+    <div class="ratings">
+      <span>★ 4.8 rating on <u>Capterra</u></span>
+      <span>★ 4.8 rating on <u>G2</u></span>
+      <span>★ 350+ reviews on <u>Xero</u></span>
+      <span>★ 550+ reviews on <u>QuickBooks</u></span>
+    </div>
+
+    <div class="hero-content">
+      <h1>
+        Create 
+        <span class="interactive-word">
+          <span class="trigger-hover">reports</span>
+          <div class="floating-ui popup popup-1"><img src="https://i.imgur.com/LzcknBA.png" /></div>
+          <div class="floating-ui popup popup-2"><img src="https://i.imgur.com/fGIEhHZ.png" /></div>
+          <div class="floating-ui popup popup-3"><img src="https://i.imgur.com/0aJ6plT.png" /></div>
+        </span>,
+        forecasts,<br />
+        <span class="interactive-word">
+          <span class="trigger-hover">dashboards</span>
+          <div class="floating-ui popup popup-4"><img src="https://i.imgur.com/fGIEhHZ.png" /></div>
+          <div class="floating-ui popup popup-5"><img src="https://i.imgur.com/0aJ6plT.png" /></div>
+          <div class="floating-ui popup popup-6"><img src="https://i.imgur.com/LzcknBA.png" /></div>
+        </span>
+        & consolidations
+      </h1>
+
+      <p>✨ Now with AI-insights</p>
+      <button class="cta-btn">Start 14-day free trial ›</button>
+      <div class="secondary-link">📄 See what we do</div>
+    </div>
+
+    <img src="assets/chart1.png" class="chart chart1" alt="chart" />
+    <img src="assets/chart2.png" class="chart chart2" alt="chart" />
+    <img src="assets/chart3.png" class="chart chart3" alt="chart" />
+  </section>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+    }
+  </script>
+</body>
+</html>
