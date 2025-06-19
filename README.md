@@ -34,7 +34,6 @@ project/
 
 ## 🧠 AI Tools Used
 
-- **ChatGPT** – to generate and refine HTML/CSS interactions, responsiveness, and layout
 - **Imgur** – for temporary image hosting of floating UI assets
 
 ---
